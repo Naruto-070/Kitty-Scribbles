@@ -95,11 +95,6 @@ h1 {
   color: #f1f1f1;
 }
 
-.home-btn:hover {
-  background-color: #d0708e;
-  transform: scale(1.05);
-}
-
 .dark .btn {
   background-color: #444;
   color: white;
