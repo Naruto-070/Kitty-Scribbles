@@ -164,3 +164,18 @@ body.homepage {
     font-size: 1.05rem;
   }
 }
+.dark-mode.homepage .overlay {
+  background-color: rgba(26, 26, 26, 0.7);
+}
+
+.dark-mode .home-content h1 {
+  color: #f4a4c7;
+}
+
+.dark-mode .tagline {
+  color: #ddd;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
