@@ -1,71 +1,77 @@
-/* Background image and overlay for readability */
-body {
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Georgia', serif;
   background: url('56c6aa35-7eea-4394-b5c1-e7b9fdcbadd8.png') no-repeat center center fixed;
   background-size: cover;
-  color: #1a1a1a;
+  color: #fff;
+  line-height: 1.7;
+  padding: 2rem;
   position: relative;
+  min-height: 100vh;
 }
 
+/* Background overlay for readability */
 body::before {
   content: '';
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.7); /* soft white overlay */
-  backdrop-filter: blur(4px);
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay for contrast */
   z-index: -1;
 }
 
-/* Nav styling */
-nav {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(4px);
-  padding: 1rem;
+/* Header Styles */
+.blog-header {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  font-weight: bold;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  transition: color 0.3s;
+.blog-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
 }
 
-nav a:hover {
-  color: #007b5e;
+.blog-header .meta {
+  font-size: 0.95rem;
+  color: #ccc;
+  font-style: italic;
 }
 
-/* Main blog content */
-.blog-container {
-  max-width: 900px;
-  margin: 60px auto;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
+/* Blog Content */
+.blog-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-.blog-title {
-  font-size: 32px;
-  color: #004d40;
+.blog-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #f4f4f4;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-.blog-post {
-  margin-bottom: 40px;
-}
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .blog-header h1 {
+    font-size: 2.2rem;
+  }
 
-.blog-post h2 {
-  color: #2e7d32;
-  margin-bottom: 10px;
-}
-
-.blog-post p {
-  line-height: 1.7;
-  color: #333;
+  .blog-content p {
+    font-size: 1.05rem;
+  }
 }
