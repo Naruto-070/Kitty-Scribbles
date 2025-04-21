@@ -1,4 +1,6 @@
-/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500&display=swap');
+
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,69 +8,82 @@
 }
 
 body {
-  font-family: 'Georgia', serif;
-  background: url('56c6aa35-7eea-4394-b5c1-e7b9fdcbadd8.png') no-repeat center center fixed;
+  font-family: 'Quicksand', sans-serif;
+  background: url('e12e1246-d702-49c8-aa7b-78457dc195d6.png') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
-  line-height: 1.7;
+  color: #4a3f3f;
+  line-height: 1.8;
   padding: 2rem;
   position: relative;
   min-height: 100vh;
 }
 
-/* Background overlay for readability */
+/* Overlay for soft readability */
 body::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.55); /* dark overlay for contrast */
+  background: rgba(255, 245, 233, 0.7); /* soft pastel overlay */
   z-index: -1;
 }
 
-/* Header Styles */
+/* Blog Header */
 .blog-header {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 2px solid rgba(255, 182, 193, 0.5);
 }
 
 .blog-header h1 {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
+  color: #e94f8b; /* soft pink */
+  text-shadow: 1px 1px 1px rgba(255, 192, 203, 0.4);
 }
 
 .blog-header .meta {
-  font-size: 0.95rem;
-  color: #ccc;
+  font-size: 1rem;
+  color: #6c5b5b;
   font-style: italic;
+  margin-top: 0.3rem;
 }
 
 /* Blog Content */
 .blog-content {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  color: #4a3f3f;
 }
 
 .blog-content p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
   font-size: 1.2rem;
-  color: #f4f4f4;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  color: #333;
 }
 
-/* Responsive Styling */
+/* Signature */
+.blog-content p:last-child {
+  font-style: italic;
+  text-align: right;
+  font-weight: bold;
+  color: #d9648f;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .blog-header h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+  }
+
+  .blog-content {
+    padding: 1rem;
   }
 
   .blog-content p {
