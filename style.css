@@ -7,16 +7,80 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ffeaf6, #e0f7fa); /* soft pink-blue dreamy gradient */
+  background: linear-gradient(135deg, #ffeaf6, #e0f7fa); /* soft dreamy gradient */
   color: #333;
   padding: 60px 20px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+  text-align: center;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* Main Blog Container */
+/* ---------------- HOME PAGE ---------------- */
+.home-content {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 50px 40px;
+  border-radius: 25px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  max-width: 650px;
+  width: 100%;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #e91e63;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 6px rgba(233, 30, 99, 0.2);
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 30px;
+  background-color: #e88da2;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 16px rgba(232, 141, 162, 0.3);
+}
+
+.btn:hover {
+  background-color: #d0708e;
+  transform: scale(1.06);
+}
+
+.btn.small {
+  padding: 12px;
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+/* ---------------- BLOG PAGE ---------------- */
 .blog-container {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -28,7 +92,6 @@ body {
   transition: all 0.3s ease-in-out;
 }
 
-/* Heading */
 .blog-container h1 {
   font-size: 3rem;
   color: #e91e63;
@@ -37,15 +100,14 @@ body {
   text-shadow: 1px 1px 8px rgba(233, 30, 99, 0.2);
 }
 
-/* Author and Date */
-.author {
+.author,
+.blog-meta {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 25px;
   font-style: italic;
 }
 
-/* Blog Text */
 .blog-container p {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -53,14 +115,14 @@ body {
   color: #444;
 }
 
-/* Emphasis in Blog */
 .blog-container em {
   font-style: italic;
   color: #d81b60;
 }
 
-/* Home Button */
-.home-btn {
+/* Pink Home Button */
+.home-btn,
+.home-button {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
@@ -75,21 +137,62 @@ body {
   box-shadow: 0 4px 14px rgba(233, 30, 99, 0.3);
 }
 
-.home-btn:hover {
+.home-btn:hover,
+.home-button:hover {
   background-color: #d81b60;
   transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* ---------------- DARK MODE ---------------- */
+.dark {
+  background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
+  color: #f1f1f1;
+}
+
+.dark .home-content,
+.dark .blog-container {
+  background: rgba(40, 40, 40, 0.85);
+  color: #f1f1f1;
+}
+
+.dark .btn,
+.dark .home-btn,
+.dark .home-button {
+  background-color: #444;
+  color: white;
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark .btn:hover,
+.dark .home-btn:hover,
+.dark .home-button:hover {
+  background-color: #666;
+}
+
+/* ---------------- ANIMATIONS & RESPONSIVE ---------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 600px) {
+  .home-content,
   .blog-container {
     padding: 30px 20px;
   }
 
+  .home-content h1,
   .blog-container h1 {
     font-size: 2.4rem;
   }
 
+  .tagline,
   .blog-container p {
     font-size: 1rem;
   }
