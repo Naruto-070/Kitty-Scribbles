@@ -30,7 +30,21 @@
     color: #555;
     font-weight: 500;
   }
-  
+  #darkToggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#darkToggle:hover {
+  transform: scale(1.1);
+}
+
   .blog-post {
     max-width: 800px;
     margin: 2rem auto;
