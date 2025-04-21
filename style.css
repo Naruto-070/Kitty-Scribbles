@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500&display=swap');
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,37 +8,90 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: url('e12e1246-d702-49c8-aa7b-78457dc195d6.png') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #fffaf5;
   color: #4a3f3f;
   line-height: 1.8;
-  padding: 2rem;
-  position: relative;
   min-height: 100vh;
 }
 
-/* Overlay for soft readability */
-body::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 245, 233, 0.7); /* soft pastel overlay */
-  z-index: -1;
+/* Shared Button Styles */
+.btn {
+  padding: 0.7rem 1.5rem;
+  background-color: #f6a5c0;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  transition: background 0.3s ease;
+  display: inline-block;
 }
 
-/* Blog Header */
-.blog-header {
+.btn:hover {
+  background-color: #ec84a1;
+}
+
+.btn.small {
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  margin: 0 0.5rem;
+}
+
+/* =======================
+   Home Page Styles
+======================= */
+body.homepage {
+  background: url('ebab1789-9cc8-4796-a718-59fee3c2a6a8.png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.homepage .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(255, 245, 233, 0.7);
+  z-index: 0;
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 10% 2rem;
+}
+
+.home-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #e94f8b;
+  margin-bottom: 1rem;
+}
+
+.home-content .tagline {
+  font-size: 1.2rem;
+  color: #6c5b5b;
+  margin-bottom: 2rem;
+}
+
+/* =======================
+   Blog Page Styles
+======================= */
+
+.blog-header {
+  max-width: 800px;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  padding-bottom: 1rem;
   border-bottom: 2px solid rgba(255, 182, 193, 0.5);
+  position: relative;
 }
 
 .blog-header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  color: #e94f8b; /* soft pink */
+  color: #e94f8b;
   text-shadow: 1px 1px 1px rgba(255, 192, 203, 0.4);
 }
 
@@ -50,7 +102,10 @@ body::before {
   margin-top: 0.3rem;
 }
 
-/* Blog Content */
+.nav-links {
+  margin-top: 1rem;
+}
+
 .blog-content {
   max-width: 800px;
   margin: 2rem auto;
@@ -58,17 +113,15 @@ body::before {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
   backdrop-filter: blur(6px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
   color: #4a3f3f;
 }
 
 .blog-content p {
   margin-bottom: 1.6rem;
   font-size: 1.2rem;
-  color: #333;
 }
 
-/* Signature */
 .blog-content p:last-child {
   font-style: italic;
   text-align: right;
@@ -76,8 +129,29 @@ body::before {
   color: #d9648f;
 }
 
+/* Dark Mode */
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+.dark-mode .blog-header,
+.dark-mode .blog-content {
+  background-color: rgba(34, 34, 34, 0.8);
+  color: #f0f0f0;
+}
+
+.dark-mode .btn {
+  background-color: #888;
+}
+
+.dark-mode .btn:hover {
+  background-color: #aaa;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .home-content h1,
   .blog-header h1 {
     font-size: 2.4rem;
   }
