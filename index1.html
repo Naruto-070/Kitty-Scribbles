@@ -1,22 +1,27 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome - Divanshi's Journal</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - Divanshi’s Journal</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="homepage">
-
-  <div class="overlay"></div>
-
+<body>
   <div class="home-content">
     <h1>Welcome to Divanshi’s Journal</h1>
     <p class="tagline">A dreamy escape into thoughts, feelings, and everything in between.</p>
-    <a href="index.html" class="btn">Enter the Blog</a>
-    <button id="darkToggle" class="btn small" title="Toggle Dark Mode">🌓</button>
+    
+    <div class="button-group">
+      <a href="index.html" class="btn">Enter the Blog</a>
+      <button id="darkToggle" class="btn small" title="Toggle Dark Mode">🌓</button>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
