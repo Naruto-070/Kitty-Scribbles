@@ -8,30 +8,36 @@
 </head>
 <body>
 
-  <header>
-    <h1>My Personal Blog</h1>
+  <aside class="sidebar">
+    <h2 class="logo">MyBlog</h2>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="#">About</a>
+      <a href="#">HOME</a>
+      <a href="#">BLOGS</a>
+      <a href="#">VIDEOS</a>
+      <a href="#">GALLERY</a>
+      <a href="#">ABOUT</a>
+      <a href="#">EVENTS</a>
     </nav>
-    <button id="darkToggle">🌓</button>
-  </header>
+  </aside>
 
-  <main class="blog-post">
-    <h2>I Am An Adult (Almost)</h2>
-    <p class="meta">By MostlySane | June 28, 2018</p>
-    <div class="post-content">
+  <main class="content">
+    <header class="hero">
+      <h1 class="title">I Am An Adult (Almost)</h1>
+      <p class="meta">By MostlySane • June 28, 2018</p>
+    </header>
+
+    <article class="post-content">
       <p>Today I woke up and realized I forgot to pay the electricity bill... again. Adulting is hard.</p>
       <p>I thought being 18 meant freedom, but really, it just means more responsibility and less sleep.</p>
       <p>...</p>
-    </div>
+    </article>
+
+    <footer>
+      <p>&copy; 2025 MyBlog. All rights reserved.</p>
+    </footer>
   </main>
 
-  <footer>
-    <p>&copy; 2025 My Blog. All rights reserved.</p>
-  </footer>
-
+  <button id="darkToggle">🌓</button>
   <script src="script.js"></script>
-
 </body>
 </html>
