@@ -1,181 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Quicksand:wght@400;500&display=swap');
-
-* {
+/* General Reset */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Quicksand', sans-serif;
-  background-color: #fffaf5;
-  color: #4a3f3f;
-  line-height: 1.8;
-  min-height: 100vh;
-}
-
-/* Shared Button Styles */
-.btn {
-  padding: 0.7rem 1.5rem;
-  background-color: #f6a5c0;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  border-radius: 30px;
-  transition: background 0.3s ease;
-  display: inline-block;
-}
-
-.btn:hover {
-  background-color: #ec84a1;
-}
-
-.btn.small {
-  padding: 0.4rem 1rem;
-  font-size: 0.9rem;
-  margin: 0 0.5rem;
-}
-
-/* =======================
-   Home Page Styles
-======================= */
-body.homepage {
-  background: url('2e409e09-ff41-43c1-8d67-60fdb795a2be.png') no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-}
-
-.homepage .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(255, 245, 233, 0.7);
-  z-index: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef6f2;
+  color: #333;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .home-content {
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 10% 2rem;
+  max-width: 600px;
+  padding: 20px;
 }
 
-.home-content h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #e94f8b;
-  margin-bottom: 1rem;
+h1 {
+  color: #e91e63;
+  font-size: 2.5rem;
 }
 
-.home-content .tagline {
-  font-size: 1.2rem;
-  color: #6c5b5b;
-  margin-bottom: 2rem;
+.tagline {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
 }
 
-/* =======================
-   Blog Page Styles
-======================= */
-
-.blog-header {
-  max-width: 800px;
-  margin: 2rem auto 1rem;
-  text-align: center;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid rgba(255, 182, 193, 0.5);
-  position: relative;
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
-.blog-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  color: #e94f8b;
-  text-shadow: 1px 1px 1px rgba(255, 192, 203, 0.4);
-}
-
-.blog-header .meta {
-  font-size: 1rem;
-  color: #6c5b5b;
-  font-style: italic;
-  margin-top: 0.3rem;
-}
-
-.nav-links {
-  margin-top: 1rem;
-}
-
-.blog-content {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  color: #4a3f3f;
-}
-
-.blog-content p {
-  margin-bottom: 1.6rem;
-  font-size: 1.2rem;
-}
-
-.blog-content p:last-child {
-  font-style: italic;
-  text-align: right;
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  background-color: #e88da2;
+  color: white;
   font-weight: bold;
-  color: #d9648f;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-/* Dark Mode */
-.dark-mode {
-  background-color: #1a1a1a;
-  color: #f4f4f4;
+.btn:hover {
+  background-color: #d0708e;
 }
 
-.dark-mode .blog-header,
-.dark-mode .blog-content {
-  background-color: rgba(34, 34, 34, 0.8);
-  color: #f0f0f0;
+.btn.small {
+  padding: 12px;
+  width: 45px;
 }
 
-.dark-mode .btn {
-  background-color: #888;
+.dark {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
 }
 
-.dark-mode .btn:hover {
-  background-color: #aaa;
+.dark .btn {
+  background-color: #444;
+  color: white;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .home-content h1,
-  .blog-header h1 {
-    font-size: 2.4rem;
-  }
-
-  .blog-content {
-    padding: 1rem;
-  }
-
-  .blog-content p {
-    font-size: 1.05rem;
-  }
-}
-.dark-mode.homepage .overlay {
-  background-color: rgba(26, 26, 26, 0.7);
-}
-
-.dark-mode .home-content h1 {
-  color: #f4a4c7;
-}
-
-.dark-mode .tagline {
-  color: #ddd;
-}
-
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
+.dark .btn:hover {
+  background-color: #666;
 }
