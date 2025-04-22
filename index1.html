@@ -123,15 +123,23 @@
 
   <!-- Toggle music script -->
   <script>
-    const music = document.getElementById('bg-music');
-    function toggleMusic() {
-      if (music.paused) {
-        music.play();
-      } else {
-        music.pause();
-      }
+  const music = document.getElementById('bg-music');
+  let isPlaying = false;
+
+  function toggleMusic() {
+    if (!isPlaying) {
+      music.play().then(() => {
+        isPlaying = true;
+      }).catch((err) => {
+        console.error('Playback failed:', err);
+        alert("⚠️ Click again to allow music. Your browser blocked autoplay.");
+      });
+    } else {
+      music.pause();
+      isPlaying = false;
     }
-  </script>
+  }
+</script>
 
 </body>
 </html>
