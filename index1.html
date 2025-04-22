@@ -122,7 +122,7 @@
   <!-- Toggle music script -->
   <script>
   const music = document.getElementById('bg-music');
-  let isPlaying = false;
+  let isPlaying = true;
 
   function toggleMusic() {
     if (!isPlaying) {
@@ -134,7 +134,7 @@
       });
     } else {
       music.pause();
-      isPlaying = false;
+      isPlaying = true;
     }
   }
 </script>
