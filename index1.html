@@ -127,14 +127,14 @@
   function toggleMusic() {
     if (!isPlaying) {
       music.play().then(() => {
-        isPlaying = true;
+        isPlaying = false;
       }).catch((err) => {
         console.error('Playback failed:', err);
         alert("⚠️ Click again to allow music. Your browser blocked autoplay.");
       });
     } else {
       music.pause();
-      isPlaying = true;
+      isPlaying = false;
     }
   }
 </script>
