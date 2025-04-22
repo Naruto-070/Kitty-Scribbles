@@ -1,4 +1,7 @@
-/* Base styles */
+/* Import dreamy font */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&display=swap');
+
+/* Base body styling */
 body {
   margin: 0;
   padding: 0;
@@ -11,21 +14,10 @@ body {
   text-align: center;
   animation: dreamyFadeIn 2s ease-in;
   color: #3a3a3a;
+  overflow: hidden;
 }
 
-/* Dreamy text fade in */
-@keyframes dreamyFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Welcome Box */
+/* Container box */
 .container {
   background: rgba(255, 255, 255, 0.8);
   padding: 3rem 4rem;
@@ -33,20 +25,26 @@ body {
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
   backdrop-filter: blur(10px);
   max-width: 600px;
+  z-index: 10;
 }
 
-h1 {
+/* Dreamy animated heading */
+.dreamy-title {
   font-size: 2.8rem;
-  color: #8e44ad;
+  color: #d63384;
   margin-bottom: 0.5rem;
+  animation: dreamyFloatIn 2.5s ease-out forwards;
+  opacity: 0;
 }
 
+/* Subtitle paragraph */
 p {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
 
+/* Dreamy button */
 a {
   display: inline-block;
   text-decoration: none;
@@ -64,13 +62,39 @@ a:hover {
   box-shadow: 0 6px 25px rgba(0,0,0,0.2);
 }
 
-/* Responsive */
+/* Smooth dreamy fade for body */
+@keyframes dreamyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Float-in title animation */
+@keyframes dreamyFloatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+    letter-spacing: 0.2em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: normal;
+  }
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
   .container {
     padding: 2rem;
   }
 
-  h1 {
+  .dreamy-title {
     font-size: 2.2rem;
   }
 
@@ -78,3 +102,4 @@ a:hover {
     font-size: 1rem;
   }
 }
+
