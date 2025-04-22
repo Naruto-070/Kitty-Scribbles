@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Divanshi’s Journal</title>
@@ -14,9 +11,10 @@
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(to bottom right, #ffe6f0, #ffe6fa);
+      overflow: hidden;
     }
 
-    h1, h2 {
+    h1 {
       font-family: 'Parisienne', cursive;
     }
 
@@ -47,12 +45,72 @@
       background: linear-gradient(to right, #ff9ed2, #ffc0eb);
       transform: scale(1.05);
     }
+
+    .typewriter h1 {
+      overflow: hidden;
+      border-right: 0.15em solid #ff9ec7;
+      white-space: nowrap;
+      animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff9ec7; }
+    }
+
+    /* Floating petals */
+    .petal {
+      position: fixed;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background: url('https://i.imgur.com/BZlgWgf.png') no-repeat center center;
+      background-size: contain;
+      animation: fall 12s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(120vh) rotate(360deg); }
+    }
+
+    /* Randomize animation duration and delay */
+    .petal:nth-child(odd) { animation-duration: 10s; }
+    .petal:nth-child(even) { animation-duration: 14s; }
   </style>
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body class="flex items-center justify-center min-h-screen p-4 relative">
 
-  <div class="bg-white/70 backdrop-blur-xl rounded-3xl shadow-lg p-10 max-w-xl w-full text-center fade-in">
-    <h1 class="text-4xl md:text-5xl text-pink-600 mb-4 glow">Welcome to Divanshi’s Journal</h1>
+  <!-- Sakura petals (20) -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDelay = Math.random() * 10 + 's';
+      document.body.appendChild(petal);
+    }
+  </script>
+
+  <!-- Music -->
+  <audio id="bg-music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/11/03/audio_6f6c58c834.mp3?filename=fairy-ambience-124014.mp3" type="audio/mpeg">
+  </audio>
+  <button onclick="toggleMusic()" class="absolute top-5 right-5 dreamy-button text-white px-4 py-2 rounded-full shadow-md hover:scale-105 transition duration-300 z-10">
+    🎶 Toggle Music
+  </button>
+
+  <!-- Main Card -->
+  <div class="bg-white/70 backdrop-blur-xl rounded-3xl shadow-lg p-10 max-w-xl w-full text-center fade-in relative z-10">
+    <div class="typewriter mb-4">
+      <h1 class="text-4xl md:text-5xl text-pink-600 glow">Welcome to Divanshi’s Journal</h1>
+    </div>
     <p class="text-lg text-gray-700 mb-6 hover-underline transition duration-300">
       A dreamy escape into thoughts, feelings, and everything in between.
     </p>
@@ -61,6 +119,18 @@
       <span>Enter the Blog</span> <span>🌸</span>
     </a>
   </div>
+
+  <!-- Toggle music script -->
+  <script>
+    const music = document.getElementById('bg-music');
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    }
+  </script>
 
 </body>
 </html>
